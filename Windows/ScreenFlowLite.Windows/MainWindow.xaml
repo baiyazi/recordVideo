@@ -1,0 +1,20 @@
+<Window x:Class="ScreenFlowLite.Windows.MainWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ Title="轻录屏" Width="540" Height="690" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+ <Grid Margin="30"><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+  <StackPanel>
+   <StackPanel Orientation="Horizontal" Margin="0,0,0,22"><Ellipse Width="48" Height="48" Fill="#FF3732"/><StackPanel Margin="14,0"><TextBlock Text="轻录屏" FontSize="26" FontWeight="Bold"/><TextBlock Text="简单、清晰的 Windows 录屏工具" Foreground="#777" FontSize="14"/></StackPanel></StackPanel>
+   <GroupBox Header="录制设置" Padding="16"><StackPanel>
+    <TextBlock Text="录制范围" FontWeight="SemiBold"/><ComboBox x:Name="ModeBox" SelectedIndex="0" Margin="0,6,0,14"><ComboBoxItem Content="划定区域"/><ComboBoxItem Content="全屏"/></ComboBox>
+    <TextBlock Text="画质" FontWeight="SemiBold"/><ComboBox x:Name="QualityBox" SelectedIndex="1" Margin="0,6,0,14"><ComboBoxItem Content="标准"/><ComboBoxItem Content="高清"/><ComboBoxItem Content="超清"/></ComboBox>
+    <CheckBox x:Name="SystemAudioBox" Content="录制系统音频（需要可用的 Stereo Mix 设备）" Margin="0,4"/>
+    <CheckBox x:Name="MicrophoneBox" Content="录制默认麦克风" Margin="0,4"/>
+    <CheckBox x:Name="RevealBox" Content="录制完成后在资源管理器中显示" IsChecked="True" Margin="0,4,0,14"/>
+    <TextBlock Text="保存目录" FontWeight="SemiBold"/><DockPanel Margin="0,6,0,0"><Button Content="更改…" DockPanel.Dock="Right" Click="ChooseFolder_Click" Padding="14,5"/><TextBlock x:Name="FolderText" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/></DockPanel>
+   </StackPanel></GroupBox>
+   <Button x:Name="StartButton" Content="选择区域并录制" Click="Start_Click" Background="#FF3732" Foreground="White" FontSize="17" FontWeight="SemiBold" Padding="16" Margin="0,22,0,10"/>
+   <TextBlock x:Name="StatusText" Text="准备就绪 · 快捷键 Ctrl + Alt + R" Foreground="#777" TextWrapping="Wrap"/>
+  </StackPanel>
+ </Grid>
+</Window>
